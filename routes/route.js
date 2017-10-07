@@ -30,8 +30,9 @@ router.post('/contact', function(req, res, next){
 
 //delete contact
 router.delete('/contact/:id', function(req, res, next){
-  //logic to add contact.
-  Contact.remove({_id: req.param.id}, function(err, result){
+  //logic to delete contact.
+  console.log(req.params.id);
+  Contact.remove({_id: req.params.id}, function(err, result){
     if(err){
       res.json(err);
     } else {
